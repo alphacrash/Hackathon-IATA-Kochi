@@ -27,7 +27,7 @@
       <Travelers>
         <Traveler>
           <AnonymousTraveler>
-            <PTC Quantity="{{travellers}}">ADT</PTC>
+            <PTC Quantity="{{travelers}}">ADT</PTC>
           </AnonymousTraveler>
         </Traveler>
       </Travelers>
