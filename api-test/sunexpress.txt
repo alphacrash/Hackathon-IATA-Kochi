@@ -1,0 +1,43 @@
+https://iflyrestest.ibsgen.com:6013/iRes_NdcRes_WS/services/NdcResServiceSOAPPort?wsdl
+
+HKTHONUSR
+12345
+
+Card Type VI
+Card Number 4355084355084358
+CVV Code 513
+Hold Name ABDUL
+Expiry Date 1218
+
+CardNumber:
+BnaqrQVwy3UnKJl+T3/rW67H6bBlU/IdaGtfari6mJ8=%~~`%~~~~~~~%^**(%$#%gw
+dKfdu+H8sMWOsw7JhWrQCZs+K/OXNO2RFS8KFPSPhaUx93v21JQDPGWRKCT/mePvuv/Xy
+4527p0FUVIzbfz0QRJPtvmGs8ibaUDrijEiACzfOLvbVurFFCTTUAZf+g7j++f8ZlN6REh0itYhSIF
+7S4du6xvQ/+Yy9SkwuiZKMNX81DOyQaYx1kNgFBdzpgwxGsG8bb7cxglYWl4kEZF49ZdAdm
+OeKQgapyGejqbpy/O6ktEdxRnvLmPfpRtVzPhLXa9h71Bhkz5jmhXQVgp/cwGHN4s6+3dpn6I
+ur0zCC88Nin4gii4Etwg73Iao/HRlY6HYmKtRMf34jb49pvqA==
+
+SeriesCode:
+Myx8YAI5iQRv/k5BCGbW6w==%~~`%~~~~~~~%^**(%$#%R+juo+cfqt/VgPXxfTBm
+wzrzn6oIpQBE+Ybk0vPLEobF9TzA1MLY8f6xsuJFRB6UASy+QGfpnR4pbWNUtTK2/BSC5lmh
+KLGkrgjYHnu49MnTSMxsZAIh85n0N4ZuLw80McJ2eG/d124s4TESKm+TzolDIQrvsI5TrtcYT9
+/mu95hG9CBwlYthksDz9gi6sK23iHPHbLpH0g/foHLOG6iZInOBhKL865Ah5ehCm0jhE2WaLrh
+8MUcD6IlFqxTOeqLoUvCG4CbBiCMzCP9jLy6x2SeYOggau6iGkYuhMcdFfArM6nUfc71VRCHFe
+rlUFJqgExS1a1IG7s5UHUvGa6Hhg==
+
+CardHolderName:
+0gmcyDqd6KTzQxbjgmU0pw==%~~`%~~~~~~~%^**(%$#%ZdoEHJvOUTHOJXn5fh5
+LjcXQ5FvoGsUrokQjKFn759/h2l9Rq1eG3i9GSOKr10OzJ9B2dFCSEc5fWNPwLyr3xdWP28a4xc
+Gdhtwa8cgLiYFfRJ//yz9aP0++3MLQNTYod+PpDNlRmhft3CaS3VYPZLLHNmZQv51f0CS5xW
+4GlghASJnWDeXad1j5F4Opoavt8OrwcLlJDA6WcsE9R4yTSh07litl6QQ99T75uh0askwH2Askd
+dVOTYhEdH1B7TwtRrbV2URPQE4+9Xd+90Y7IP+bOTlfmIIexFot4/rPPrOGTD122TgsqlfcQC
++9OhiDnYttzUZ1U4XRdXJQF8dANA==
+
+Expiration:
+5c1NTE8bR1YLrMXWSSH0wA==%~~`%~~~~~~~%^**(%$#%Jn7/bfhgzMSH0tlv5Ais
+OVzTen/K8NxOBY99w8hXWUu0kkGhs7zmpdnUECOd4VCNmv9FQWojQIoFLu3C3YKSxE5WZ
+aIdy6UtarB1k20XyjdZjNwT4yiK+iQBzLqv9XRgMgRkrF78gN0IQvXrR8p8pcwKamJhqkyaG4L0
+ahAPoyKM1lTSVY/buu9gM9PW8tPudR8QqKt3Ow8imcekGiiPrpediq5RxYI44A3zPQf5CPFVwH
+70FjZ4dstd361m4dIPWCaEZLB0ZEDqgcoXK7d1oLrkV7/JSknR+10AK7PNl84OneiQZpN88WE
+UnYaxNJ8IWC2DiliJdRrnhdne2BTwjg==
+

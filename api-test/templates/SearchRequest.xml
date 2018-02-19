@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edis="http://www.iata.org/IATA/EDIST">
+  <soapenv:Header />
+  <soapenv:Body>
+    <AirShoppingRQ xmlns="http://www.iata.org/IATA/EDIST" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance" xsi:schemaLocation="https://iflyrestest.ibsgen.com:6012/iRes_NdcRes_WS/services/NdcResServi ceSOAPPort?xsd=../../xsd/ndcres/AirShoppingRQ.xsd" Version="">
+      <PointOfSale>
+        <Location>
+          <CountryCode>{{country_code}}</CountryCode>
+        </Location>
+      </PointOfSale>
+      <Document>
+        <Name>NDC</Name>
+        <ReferenceVersion>15.1.2</ReferenceVersion>
+      </Document>
+      <Party>
+        <Sender>
+          <AgentUserSender>
+            <AgentUserID>{{agent_user_id}}</AgentUserID>
+          </AgentUserSender>
+        </Sender>
+        <Recipient>
+          <ORA_Recipient>
+            <AirlineID>XQ</AirlineID>
+          </ORA_Recipient>
+        </Recipient>
+      </Party>
+      <Travelers>
+        <Traveler>
+          <AnonymousTraveler>
+            <PTC Quantity="{{travellers}}">ADT</PTC>
+          </AnonymousTraveler>
+        </Traveler>
+      </Travelers>
+      <CoreQuery>
+        <OriginDestinations>
+          <OriginDestination>
+            <Departure>
+              <AirportCode>{{departure}}</AirportCode>
+              <Date>{{date}}</Date>
+            </Departure>
+            <Arrival>
+              <AirportCode>{{arrival}}</AirportCode>
+            </Arrival>
+            <CalendarDates DaysAfter="0" DaysBefore="0" />
+          </OriginDestination>
+        </OriginDestinations>
+      </CoreQuery>
+      <Preferences>
+        <Preference>
+          <FarePreferences>
+            <Types>
+              <Type>
+                <Code>SunEco</Code>
+              </Type>
+            </Types>
+          </FarePreferences>
+        </Preference>
+        <Preference>
+          <TransferPreferences>
+            <Connection>
+              <MaxNumber>{{max_connections}}</MaxNumber>
+            </Connection>
+          </TransferPreferences>
+        </Preference>
+      </Preferences>
+    </AirShoppingRQ>
+  </soapenv:Body>
+</soapenv:Envelope>
