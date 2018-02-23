@@ -1,1 +1,126 @@
-<h1>Home</h1>
+{% extends "base.html" %} 
+
+{% block content %}
+
+<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-parent">
+                <a href="javascript:flight_status()">
+                    <span uk-icon="location"></span>&nbsp; Flight Status</a>
+            </li>
+            <div class="uk-navbar-item" id="nav_input">
+                <form action="#">
+                    <input class="uk-input uk-form-width-small" type="text" placeholder="Enter Query">
+                    <button class="uk-button uk-button-default" id="nav_button">Search</button>
+                </form>
+            </div>
+        </ul>
+        <ul class="uk-navbar-nav">
+
+            <li class="uk-parent">
+                <a href="">
+                    <span uk-icon="user"></span>&nbsp; Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div uk-slideshow class="uk-position-relative uk-visible-toggle uk-light">
+
+    <ul class="uk-slideshow-items" style="width:100vw;">
+        <li>
+            <img src="{% static "img/3.png" %}" alt="" uk-cover>
+        </li>
+    </ul>
+    <div class="card">
+        <form class="uk-grid-small" uk-grid>
+            <div class="uk-width-1-1@s">
+                <div class="uk-card uk-card-default uk-card-small" id="search_flight">
+                    <div class="uk-text-center uk-card-body">
+                        <h4 style="color:whitesmoke;">Search Flight</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;padding-left:40px;">From :</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <input class="uk-input" type="text" placeholder="From Airport">
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;">
+                    <span uk-icon="arrow-right"></span>
+                    <span uk-icon="arrow-left"></span>To :</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <input class="uk-input" type="text" style="padding-right:40px;" placeholder="To Airport">
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;padding-left:40px;">Adult :</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="0" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;padding-left:40px;">Infant (0-6 years) :</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="0" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;padding-left:40px;">Depart:</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <input class="uk-input" type="date">
+            </div>
+            <div class="uk-width-1-4@s">
+                <Label style="color:whitesmoke;padding-left:40px;">Return:</Label>
+            </div>
+            <div class="uk-width-1-4@s">
+                <input class="uk-input" type="date">
+            </div>
+            <div class="uk-width-1-1@s">
+                <center>
+                    <button class="uk-button uk-button-default">Search Flight</button>
+                </center>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="card2">
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">BlockChain Complient</h3>
+            <p>Fear of safety of your personal info? Well, We got the best solution for that . With our advanced BlockChain
+                technology we assure the security of every bit of your personal credential. We got the powerful framework
+                in which you can share your details without any hesitation. </p>
+            <br>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Get The Best Seat</h3>
+            <p>We care about you. So we have the best seat for you. We ensure that you get the best seat. With our seat swapping
+                you can swap seats with others.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Get Cheapest Fare</h3>
+            <p>Dont worry abiut the fares anymore . We are here to provide the best fare that is possible. We make your joerney
+                full of entertainment and fun.</p>
+        </div>
+    </div>
+</div>
+<div class="uk-card uk-card-default uk-card-body uk-width-1-1@m">
+    <h3 class="uk-card-title">Default</h3>
+    <p>Lorem ipsum
+        <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+{% endblock content %}
