@@ -4,24 +4,21 @@ from requests.auth import HTTPBasicAuth
 import datetime
 from bs4 import BeautifulSoup
 
-country_code = input('Country code (default - DE): ') or 'DE'
 departure = input('From (default - ADA): ') or 'ADA'
 arrival = input('To (default - AYT): ') or 'AYT'
 date = input('Departure Date (default - today): ') or datetime.date.today().strftime('%Y-%m-%d')
-travelers = input('Travelers (default - 1): ') or '1'
-max_connections = input('Max connections (default - 1): ') or '1'
 
 with open('templates/SearchRequest.xml', 'r') as f:
     template = f.read()
 
 values = {
-    'country_code': country_code,
+    'country_code': 'DE',
     'agent_user_id': 'HKTHONUSR',
-    'travelers': travelers,
+    'travelers': '5',
     'departure': departure,
     'date': date,
     'arrival': arrival,
-    'max_connections': max_connections
+    'max_connections': '1'
 }
 payload = pystache.render(template, values)
 
