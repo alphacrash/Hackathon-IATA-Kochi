@@ -2,6 +2,7 @@ import pystache
 import requests
 from requests.auth import HTTPBasicAuth
 import datetime
+from bs4 import BeautifulSoup
 
 country_code = input('Country code (default - DE): ') or 'DE'
 departure = input('From (default - ADA): ') or 'ADA'
@@ -30,6 +31,5 @@ auth = {
     'password': '12345'
 }
 
-response = requests.post(endpoint, headers=auth, data=payload)
-
-print(response.content)
+response = BeautifulSoup(requests.post(endpoint, headers=auth, data=payload).text, 'xml')
+print(response.prettify())
