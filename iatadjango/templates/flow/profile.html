@@ -33,23 +33,19 @@
                                     <img class="uk-border-circle" width="40" height="40" src="{% static "img/avatar.jpg" %}">
                                 </div>
                                 <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">John Doe</h3>
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">{{ user.username }}</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-card-body">
                             <ul class="uk-list uk-list-divider">
                                 <li>
-                                    <span uk-icon="user"></span>
-                                    <strong>johndoe</strong>
+                                    <span uk-icon="mail"></span>
+                                    <strong style="font-size:10px;">{{ user.email }}</strong>
                                 </li>
                                 <li>
                                     <span uk-icon="receiver"></span>
-                                    <strong>987 6543 210</strong>
-                                </li>
-                                <li>
-                                    <span uk-icon="mail"></span>
-                                    <strong style="font-size:12px;">johndoe@example.com</strong>
+                                    <strong>XXX-XXX-XXXX</strong>
                                 </li>
                             </ul>
                         </div>
