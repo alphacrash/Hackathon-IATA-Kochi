@@ -66,47 +66,40 @@
     </nav>
 
 
-    <div class="uk-container uk-margin-top">
+    <div class="uk-container uk-margin">
+
         <div class="uk-card uk-card-default uk-margin">
-            <div class="uk-card-header" uk-grid>
-                <div class="uk-width-1-2">
-                    <p>Airline Name</p>
-                </div>
-                <div class="uk-width-1-2">
-                    <p>PNR No.</p>
-                </div>
+            <form>
+                <fieldset class="uk-fieldset">
+
+                    <legend class="uk-legend uk-text-center">Add Ticket</legend>
+
+                    <div class="uk-margin uk-margin-remove-bottom">
+                        <input class="uk-input uk-form-width-medium uk-align-center" type="text" placeholder="Enter PNR Number">
+                    </div>
+
+                    <button class="uk-button uk-button-default uk-margin uk-margin-remove-top uk-align-center" type="submit">Add Ticket</button>
+            </form>
+
+        </div>
+
+        <hr class="uk-remove-margin">
+
+        <h3 align=center>Your Tickets</h3>
+
+        <div class="uk-card uk-card-default uk-margin">
+            <div class="uk-card-header uk-margin-remove-bottom">
+                <h4 class="uk-align-left">Sun Express</h4>
+                <h5 class="uk-align-right">PNR No.</h5>
             </div>
-            <div class="uk-card-body">
-                <div class="uk-margin-remove" uk-grid>
-                    <div class="uk-align-left">
-                        <p>PLACE 1</p>
-                    </div>
-                    <div class="uk-align-right uk-text-right">
-                        <p>PLACE 2</p>
-                    </div>
-                </div>
-                <hr class="uk-margin-remove">
-                <div class="uk-margin-remove" uk-grid>
-                    <div class="uk-align-left">
-                        <p>Name</p>
-                    </div>
-                    <div class="uk-align-right">
-                        <p>Seat No.</p>
-                    </div>
-                </div>
-                <div class="uk-margin-remove" uk-grid>
-                    <div class="uk-1-3">
-                        <p>Flight No.</p>
-                    </div>
-                    <div class="1-3">
-                        <p>Date</p>
-                    </div>
-                    <div class="1-3">
-                        <p>Time</p>
-                    </div>
-                </div>
+            <div class=" uk-card-body uk-align-center uk-margin-remove-top">
+                <h3>FRA <span uk-icon="chevron-right"></span> MUC</h3>
+                <button class="uk-button uk-button-default ">Volunteer</button>
+                <button class="uk-button uk-button-default ">Bumped</button>
             </div>
         </div>
+
+    </div>
 
     </div>
 
