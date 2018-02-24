@@ -12,13 +12,13 @@
     </head>
     <body>
     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-        <div class="uk-navbar-right"  >
+        <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
             <li class="uk-parent"><a href="javascript:flight_status()"><span uk-icon="location"></span>&nbsp; Flight Status</a></li>
-          <div class="uk-navbar-item" id="nav_input">
+          <div class="uk-navbar-item search" id="nav_input">
             <form action="#">
-                <input class="uk-input uk-form-width-small" type="text" placeholder="Enter Query">
-                <button class="uk-button uk-button-default" id="nav_button">Search</button>
+                <input class="uk-input uk-form-width-small search-field" type="text" placeholder="Enter Query">
+                <button class="uk-button uk-button-default search-query-button" id="nav_button">Search</button>
             </form>
         </div>
         </ul>
@@ -85,7 +85,7 @@
         <input class="uk-input" type="date">
         </div>
         <div class="uk-width-1-1@s">
-     <center><button class="uk-button uk-button-default" >Search Flight</button></center>
+     <center><button class="uk-button uk-button-default search-button" >Search Flight</button></center>
         </div>
 </form>
 </div>
