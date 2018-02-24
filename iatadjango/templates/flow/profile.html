@@ -19,10 +19,14 @@
                     <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/">Profile</a>
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Profile</a>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
+<<<<<<< HEAD
                     <li><a href="#"><span uk-icon="bell"></span><span class="uk-badge">{{ notification }}</span></a></li>
+=======
+                    <li><a href="#"><span uk-icon="bell"></span><span class="uk-badge">2</span></a></li>
+>>>>>>> 6812f968936cd7eaa892c89aaf9e088ada040643
                     <li><a href="#"><span uk-icon="more-vertical"></span></a></li>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
@@ -32,8 +36,6 @@
                 </ul>
             </div>
         </nav>
-
-        {% block content %}
         <div class="uk-container uk-margin">
             <div class="uk-card uk-card-default uk-margin">
                 <form method="POST" action="">{% csrf_token %}
@@ -82,7 +84,7 @@
                                     </ul>
                                     </div>
                                 <div class="uk-modal-footer uk-text-right">
-                                    <button class="uk-button uk-button-primary uk-align-center" type="button"><a style="color:white;" href="/bumped/">Accept</a></button>
+                                    <button class="uk-button uk-button-primary uk-align-center" type="button">Accept</button>
                                 </div>
 
                             </div>
@@ -125,7 +127,6 @@
             {% endfor %}
 
         </div>
-        {% endblock content %}
         <div id="offcanvas-overlay" uk-offcanvas="overlay: true; mode: push">
             <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
                 <button class="uk-offcanvas-close" type="button" uk-close></button>

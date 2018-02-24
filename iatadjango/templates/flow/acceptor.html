@@ -18,7 +18,13 @@
         </div>
         <i class="fa fa-wifi fa-2x uk-margin-right" aria-hidden="true"></i>
         <i class="fa fa-cutlery fa-2x uk-margin-right" aria-hidden="true"></i>
-        <button class="uk-button uk-button-primary uk-margin-remove-top uk-align-right">Accept</button>
+        <button class="uk-button uk-button-primary uk-margin-remove-top uk-align-right" uk-toggle="target: #success-toggle">Accept</button>
+        <div id="success-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <div class="loader" id="loader"></div>
+                <p>Success</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
