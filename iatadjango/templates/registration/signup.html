@@ -13,13 +13,13 @@
 </head>
 
 <body>
-
+    <div class="uk-offcanvas-content">
     <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-offcanvas-content">
+
 
             <button class="uk-button uk-button-default uk-margin-top" type="button" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></button>
 
-            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+            <div id="offcanvas-overlay" uk-offcanvas="overlay: true; mode: push">
                 <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
 
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
@@ -28,7 +28,7 @@
                         <div class="uk-card-header">
                             <div class="uk-grid-small uk-flex-middle" uk-grid>
                                 <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="img/avatar.jpg">
+                                    <img class="uk-border-circle" width="40" height="40" src="{% static "img/avatar.jpg"%}">
                                 </div>
                                 <div class="uk-width-expand">
                                     <h3 class="uk-card-title uk-margin-remove-bottom">Sign Up</h3>
@@ -48,15 +48,8 @@
                 </div>
 
             </div>
-        </div>
+
         <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Logo</a>
-        <div class="uk-navbar-right">
-            <div>
-                <ul class="uk-navbar-nav">
-                    <li><a href="#"><span uk-icon="more-vertical"></span></a></li>
-                </ul>
-            </div>
-        </div>
     </nav>
 
     <div class="uk-container">
@@ -84,7 +77,7 @@
     </div>
 
 
-
+</div>
 
 
     <script src="{% static "js/uikit.min.js" %}"></script>
