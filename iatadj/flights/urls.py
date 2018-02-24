@@ -4,4 +4,6 @@ from flights import views
 urlpatterns = [
     path('', views.index),
     path('home/', views.home),
+    path('pass/', views.passer),
+    path('get/', views.getter),
 ]
