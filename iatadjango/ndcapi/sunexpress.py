@@ -50,7 +50,8 @@ def get_ticket_details(pnr):
             'pnr': pnr,
             'source': ticket.find('Departure').find('AirportCode').get_text(),
             'destination': ticket.find('Arrival').find('AirportCode').get_text(),
-            'date': ticket.find('Departure').find('Date').get_text()[:-1]
+            'date': ticket.find('Departure').find('Date').get_text()[:-1],
+            'flightnumber': ticket.find('MarketingCarrier').find('FlightNumber').get_text()
             }
     except:
         return None
