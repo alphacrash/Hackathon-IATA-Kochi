@@ -19,10 +19,10 @@
                     <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-            <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Profile</a>
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/">Profile</a>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li><a href="/acceptor/"><span uk-icon="bell"></span><span class="uk-badge">2</span></a></li>
+                    <li><a href="/acceptor/"><span uk-icon="bell"></span><span class="uk-badge">{{ notification }}</span></a></li>
                     <li><a href="#"><span uk-icon="more-vertical"></span></a></li>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
@@ -82,7 +82,7 @@
                                     </ul>
                                     </div>
                                 <div class="uk-modal-footer uk-text-right">
-                                    <button class="uk-button uk-button-primary uk-align-center" type="button">Accept</button>
+                                    <button class="uk-button uk-button-primary uk-align-center" type="button"><a style="color:white;" href="/bumped/">Accept</a></button>
                                 </div>
 
                             </div>
@@ -109,7 +109,7 @@
                                     </ul>
                                 </div>
                                 <div class="uk-modal-footer uk-text-right">
-                                    <button class="uk-button uk-button-primary uk-align-center" type="button">Accept</button>
+                                    <button class="uk-button uk-button-primary uk-align-center" type="button"><a style="color:white;" href="/acceptor/">Accept</a></button>
                                 </div>
 
                             </div>

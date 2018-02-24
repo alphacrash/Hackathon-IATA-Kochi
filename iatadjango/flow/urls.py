@@ -6,4 +6,5 @@ urlpatterns = [
     path('profile/', views.Profile.as_view()),
     path('home/', views.home),
     path('acceptor/', views.acceptor),
+    path('bumped/', views.bumped),
 ]

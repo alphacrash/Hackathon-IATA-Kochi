@@ -16,4 +16,4 @@ class Ticket(models.Model):
     bumped = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.flight
+        return str(self.user)
