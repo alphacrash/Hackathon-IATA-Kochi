@@ -112,7 +112,7 @@
 
         <h3 align=center>Your Tickets</h3>
 
-        {% for ticket in object_list %}
+        {% for ticket in object_list reversed %}
         <div class="uk-card uk-card-default uk-margin">
                 <div class="uk-card-header uk-margin-remove-bottom">
                     <h4 class="uk-align-left">{{ ticket.flight }}</h4>

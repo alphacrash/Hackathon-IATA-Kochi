@@ -21,6 +21,6 @@ class Profile(LoginRequiredMixin, ListView):
     def post(self, request, *args, **kwargs):
         pnr = request.POST.get('pnr')
         ticket = sunexpress.get_ticket_details(pnr)
-        Ticket(user=self.request.user, flight=ticket['airline'], source=ticket['source'],
+        Ticket(user=self.request.user, flight=ticket['airline'], flight_no=ticket['flightnumber'], source=ticket['source'],
                destination=ticket['destination'], date=ticket['date'], pnr=ticket['pnr']).save()
         return HttpResponseRedirect('/profile/')
