@@ -41,12 +41,15 @@ def get_ticket_details(pnr):
        </soapenv:Body>
     </soapenv:Envelope>"""
     payload = pystache.render(template, {'pnr': pnr})
-    response = requests.post(api_endpoint, headers=api_auth, data=payload)
-    ticket = BeautifulSoup(response.text, 'xml')
-    return {
-        'airline': 'SunExpress',
-        'pnr': pnr,
-        'source': ticket.find('Departure').find('AirportCode').get_text(),
-        'destination': ticket.find('Arrival').find('AirportCode').get_text(),
-        'date': ticket.find('Departure').find('Date').get_text()
-        }
+    try:
+        response = requests.post(api_endpoint, headers=api_auth, data=payload)
+        ticket = BeautifulSoup(response.text, 'xml')
+        return {
+            'airline': 'SunExpress',
+            'pnr': pnr,
+            'source': ticket.find('Departure').find('AirportCode').get_text(),
+            'destination': ticket.find('Arrival').find('AirportCode').get_text(),
+            'date': ticket.find('Departure').find('Date').get_text()
+            }
+    except:
+        return None
