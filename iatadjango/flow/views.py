@@ -27,6 +27,11 @@ def acceptor(request):
     return render(request, "flow/acceptor.html", context)
 
 
+class AcceptorView(DetailView):
+    template_name = 'flow/acceptor.html'
+    queryset = Ticket.objects.all()
+
+
 class Profile(LoginRequiredMixin, ListView):
     template_name = "flow/profile.html"
 
