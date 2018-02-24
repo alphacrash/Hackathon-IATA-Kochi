@@ -7,11 +7,13 @@ def index(request):
     }
     return render(request, "index.html", context)
 
+
 def home(request):
     context = {
 
     }
     return render(request, "home.html", context)
+
 
 def user_profile(request):
     context = {
@@ -39,3 +41,16 @@ def flight_confirmation(request):
 
     }
     return render(request, "flight_confirmation.html", context)
+
+
+def passer(request):
+    return render(request, 'passer.html', context=None)
+
+
+def getter(request):
+    if request.method == "POST":
+        context = {
+            'input': request.POST.get('input')
+        }
+        return render(request, "getter.html", context)
+    return render(request, 'passer.html', context=None)
