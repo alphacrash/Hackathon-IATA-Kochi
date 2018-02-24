@@ -5,13 +5,13 @@ from .models import User
 
 
 class RegisterForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+    password1 = forms.CharField(widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Confirm password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ('email',)
+        fields = ('email', 'name',)
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -38,7 +38,7 @@ class UserAdminCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email',)
+        fields = ('email', 'name',)
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -66,7 +66,7 @@ class UserAdminChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'password', 'active', 'admin')
+        fields = ('email', 'name', 'password', 'active', 'admin')
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
