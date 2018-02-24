@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,130 +12,102 @@
 </head>
 
 <body>
-
-    <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-offcanvas-content">
-
-            <button class="uk-button uk-button-default uk-margin-top" type="button" uk-toggle="target: #offcanvas-overlay">
-                <span uk-icon="menu"></span>
-            </button>
-
-            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
-                <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
-
-                    <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-header">
-                            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                <div class="uk-width-auto">
-                                    <img class="uk-border-circle" width="40" height="40" src="{% static "img/avatar.jpg" %}">
-                                </div>
-                                <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">{{ user.username }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-card-body">
-                            <ul class="uk-list uk-list-divider">
-                                <li>
-                                    <span uk-icon="mail"></span>
-                                    <strong style="font-size:10px;">{{ user.email }}</strong>
-                                </li>
-                                <li>
-                                    <span uk-icon="receiver"></span>
-                                    <strong>XXX-XXX-XXXX</strong>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="uk-card uk-card-default uk-margin-small-top">
-                        <div class="uk-card-body">
-                            <ul class="uk-list uk-list-divider">
-                                <li>
-                                    <a href="">
-                                        <strong>Ticket History</strong>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <strong>Account Settings</strong>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <strong>Contact Us</strong>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Logo</a>
-        <div class="uk-navbar-right">
-            <div>
+    <div class="uk-offcanvas-content">
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#">
-                            <span uk-icon="bell"></span>
-                        </a>
-                    </li>
+                    <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-
-    <div class="uk-container uk-margin">
-
-        <div class="uk-card uk-card-default uk-margin">
-            <form method="POST" action="">{% csrf_token %}
-                <fieldset class="uk-fieldset">
-
-                    <legend class="uk-legend uk-text-center">Add Ticket</legend>
-
-                    <div class="uk-margin uk-margin-remove-bottom">
-                        <input name= 'pnr' class="uk-input uk-form-width-medium uk-align-center" type="text" placeholder="Enter PNR Number">
-                    </div>
-
-                    <button class="uk-button uk-button-default uk-margin uk-margin-remove-top uk-align-center" type="submit">Add Ticket</button>
-            </form>
-
-        </div>
-
-        <hr class="uk-remove-margin">
-
-        <h3 align=center>Your Tickets</h3>
-
-        {% for ticket in object_list reversed %}
-        <div class="uk-card uk-card-default uk-margin">
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Logo</a>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a href="#"><span uk-icon="bell"></span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="uk-container uk-margin">
+            <div class="uk-card uk-card-default uk-margin">
+                <form method="POST" action="">{% csrf_token %}
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend uk-text-center">Add Ticket</legend>
+                        <div class="uk-margin uk-margin-remove-bottom">
+                            <input name='pnr' class="uk-input uk-form-width-medium uk-align-center" type="text" placeholder="Enter PNR Number">
+                        </div>
+                        <button class="uk-button uk-button-default uk-margin uk-margin-remove-top uk-align-center" type="submit">Add Ticket</button>
+                    </fieldset>
+                </form>
+            </div>
+            <hr class="uk-remove-margin">
+            <h3 align=center>Your Tickets</h3>
+            {% for ticket in object_list reversed %}
+            <div class="uk-card uk-card-default uk-margin">
                 <div class="uk-card-header uk-margin-remove-bottom">
                     <h4 class="uk-align-left">{{ ticket.flight }}</h4>
                     <h5 class="uk-align-right">{{ ticket.pnr }}</h5>
                 </div>
                 <div class=" uk-card-body uk-align-center uk-margin-remove-top">
-    
                     <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
                         <span uk-icon="chevron-right"></span>{{ ticket.destination }}</h3>
                     <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom">Volunteer</button>
                     <button class="uk-button uk-button-default uk-align-center uk-margin-small-top">Bumped</button>
                 </div>
             </div>
-        {% endfor %}
-        
+            {% endfor %}
+        </div>
+        <div id="offcanvas-overlay" uk-offcanvas="overlay: true; mode: push">
+            <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-border-circle" width="40" height="40" src="{% static "img/avatar.jpg" %}">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">{{ user.username }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <ul class="uk-list uk-list-divider">
+                            <li>
+                                <span uk-icon="mail"></span>
+                                <strong style="font-size:10px;">{{ user.email }}</strong>
+                            </li>
+                            <li>
+                                <span uk-icon="receiver"></span>
+                                <strong>XXX-XXX-XXXX</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-card uk-card-default uk-margin-small-top">
+                    <div class="uk-card-body">
+                        <ul class="uk-list uk-list-divider">
+                            <li>
+                                <a href="">
+                                    <strong>Ticket History</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <strong>Account Settings</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <strong>Contact Us</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    </div>
-
-
-
     <script src="{% static "js/uikit.min.js" %}"></script>
     <script src="{% static "js/uikit-icons.min.js" %}"></script>
-
 </body>
 
 </html>
