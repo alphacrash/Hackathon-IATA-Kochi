@@ -4,6 +4,7 @@ body{
 nav{
 	background-color: #3C2759;
 	color:#B4AAC1;
+    height:60px;
 	}
 #nav_button{
 	color:#B4AAC1;
@@ -11,15 +12,15 @@ nav{
 
 .card{
 max-width:700px;
-width: 100%;
+width: 95%;
 min-height:400px;
 position:relative;
 left:0;
 right:0;
 margin:auto;
-top:-400px;
+top:-100px;
 z-index:99;
-background: linear-gradient(#3C2759,transparent 95%);
+background: linear-gradient(#3C2759,transparent 98%);
 border-radius:8px;
 
 }
@@ -31,7 +32,7 @@ position:relative;
 left:0;
 right:0;
 margin:auto;
-top:-400px;
+top:-300px;
 border-radius:8px;
 
 }
@@ -39,7 +40,15 @@ border-radius:8px;
 height:90vh;
 
 }
-
+#to_from{
+    margin-left:8px;
+}
+#mod{
+   color:#3C2759; 
+}
+Label{
+    color:whitesmoke;
+}
 .uk-slideshow-items li:after{
 content:"";
 width:100%;
@@ -81,13 +90,17 @@ img{
 }
 
 form #decrease {
-  margin-right: -4px;
+  margin-right: -2px;
   border-radius: 8px 0 0 8px;
   color:#3C2759;
 }
-
+#label{
+    margin-left:6px;
+    color:whitesmoke;
+    
+}
 form #increase {
-  margin-left: -4px;
+  margin-left: -2px;
   border-radius: 0 8px 8px 0;
   color:#3C2759;
 }
