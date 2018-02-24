@@ -7,11 +7,11 @@
     <title>Travel By Bits</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="{% static "css/uikit.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <script src="{% static "js/uikit.min.js" %}"></script>
+    <script src="{% static "js/uikit-icons.min.js" %}"></script>
+    <script src="{% static "js/script.js" %}"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
                 <li>
-                    <a href="profile.html">Profile</a>
+                    <a href="/profile/">Profile</a>
                 </li>
                 <li class="uk-parent">
                     <a href="#modal-center" uk-toggle>
@@ -47,7 +47,7 @@
                                 </div>
                                 <center>
                                     <button class="uk-button uk-button-default search-button" style="background-color:#3C2759;">
-                                        <a href="profile.html" style="color:whitesmoke;">Login</a>
+                                        <a href="/profile/" style="color:whitesmoke;">Login</a>
                                     </button>
                                     <a href="#">Register Here</a>
                                 </center>
@@ -63,7 +63,7 @@
 
         <ul class="uk-slideshow-items" style="width:100%;">
             <li>
-                <img src="img/plane.png" alt="" uk-cover>
+                <img src="{% static "img/plane.png" %}" alt="" uk-cover>
             </li>
         </ul>
         <!--<div class="card">

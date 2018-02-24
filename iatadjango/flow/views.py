@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    return render(request, "flow/index.html", {})
+
+
+def home(request):
+    return render(request, "flow/home.html", {})
+
+
+def profile(request):
+    return render(request, "flow/profile.html", {})
