@@ -10,6 +10,7 @@ api_auth = {
     'password': '12345'
 }
 
+
 def get_ticket_details(pnr):
     template = """<?xml version="1.0" encoding="UTF-8"?>
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:edis="http://www.iata.org/IATA/EDIST">
@@ -48,5 +49,5 @@ def get_ticket_details(pnr):
         'pnr': pnr,
         'source': ticket.find('Departure').find('AirportCode').get_text(),
         'destination': ticket.find('Arrival').find('AirportCode').get_text(),
-        'date': ticket.find('Departure').find('Date').get_text()
-        }
+        'date': ticket.find('Departure').find('Date').get_text()[:-1],
+    }
