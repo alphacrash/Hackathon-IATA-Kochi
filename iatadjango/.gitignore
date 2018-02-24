@@ -1,2 +1,4 @@
 *.pyc
 db.sqlite3
+flow/migrations/
+!flow/migrations/__init__.py
