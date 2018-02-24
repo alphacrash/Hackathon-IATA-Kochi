@@ -12,11 +12,15 @@ def index(request):
     return render(request, "flow/index.html", {})
 
 
+def home(request):
+    return render(request, "registration/login.html", {})
+
+
 class Profile(LoginRequiredMixin, ListView):
     template_name = "flow/profile.html"
 
     def get_queryset(self):
-        return get_list_or_404(Ticket, user=self.request.user)
+        return Ticket.objects.filter(user=self.request.user)
 
     def post(self, request, *args, **kwargs):
         pnr = request.POST.get('pnr')

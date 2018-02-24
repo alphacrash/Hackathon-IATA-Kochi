@@ -19,14 +19,14 @@
                     <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-            <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Logo</a>
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Profile</a>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li><a href="#"><span uk-icon="bell"></span></a></li>
                     <li><a href="#"><span uk-icon="more-vertical"></span></a></li>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
                         </ul>
                     </div>
                 </ul>
@@ -46,6 +46,7 @@
             </div>
             <hr class="uk-remove-margin">
             <h3 align=center>Your Tickets</h3>
+
             {% for ticket in object_list reversed %}
             <div class="uk-card uk-card-default uk-margin">
                 <div class="uk-card-header uk-margin-remove-bottom">
@@ -59,7 +60,14 @@
                     <button class="uk-button uk-button-default uk-align-center uk-margin-small-top">Bumped</button>
                 </div>
             </div>
+            {% empty %}
+            <div class="uk-card uk-card-default uk-margin">
+                <div class="uk-card-body uk-align-center uk-margin-remove-bottom">
+                    <p>Booking history is empty. Add one!</p>
+                </div>
+            </div>
             {% endfor %}
+
         </div>
         <div id="offcanvas-overlay" uk-offcanvas="overlay: true; mode: push">
             <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
@@ -71,7 +79,7 @@
                                 <img class="uk-border-circle" width="40" height="40" src="{% static "img/avatar.jpg" %}">
                             </div>
                             <div class="uk-width-expand">
-                                <h3 class="uk-card-title uk-margin-remove-bottom">{{ user.username }}</h3>
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Hello</h3>
                             </div>
                         </div>
                     </div>
@@ -79,7 +87,7 @@
                         <ul class="uk-list uk-list-divider">
                             <li>
                                 <span uk-icon="mail"></span>
-                                <strong style="font-size:10px;">{{ user.email }}</strong>
+                                <strong style="font-size:10px;">{{ user.username }}</strong>
                             </li>
                             <li>
                                 <span uk-icon="receiver"></span>
