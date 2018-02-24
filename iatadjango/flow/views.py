@@ -16,6 +16,10 @@ def home(request):
     return render(request, "registration/login.html", {})
 
 
+def acceptor(request):
+    return render(request, "flow/acceptor.html", {})
+
+
 class Profile(LoginRequiredMixin, ListView):
     template_name = "flow/profile.html"
 
