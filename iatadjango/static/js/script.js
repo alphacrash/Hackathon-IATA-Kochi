@@ -20,3 +20,7 @@ function decreaseValue() {
   value--;
   document.getElementById('number').value = value;
 }
+
+function hide_loader() {
+    $('#loader').delay(1000).hide(0);
+}
