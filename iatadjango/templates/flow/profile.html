@@ -56,8 +56,62 @@
                 <div class=" uk-card-body uk-align-center uk-margin-remove-top">
                     <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
                         <span uk-icon="chevron-right"></span>{{ ticket.destination }}</h3>
-                    <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom">Volunteer</button>
-                    <button class="uk-button uk-button-default uk-align-center uk-margin-small-top">Bumped</button>
+                        <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom" href="#modal-volunteer" uk-toggle>Volunteer</button>
+                        <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom" href="#modal-bumped" uk-toggle>Bumped</button>
+                        <div id="modal-bumped" class="uk-flex-top" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+                                <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                                <div class="uk-modal-header uk-margin-remove">
+                                    <h2 class="uk-modal-title uk-text-lead uk-align-center" style="font-size:1.1rem">Terms And Conditions</h2>
+                                </div>
+                                   <div class="uk-modal-body uk-margin-remove uk-padding-remove">
+                                     <ul class="uk-list uk-list-bullet uk-margin-remove uk-padding-remove uk-text-small">
+                                        <li>Once you agreed to this smart contract and Accept the seat request then you have to give your seat and the corresponding benifits against you will be getting through our app.</li>
+                                        <li>If no one send a seat request then you have to take that flight.</li>
+                                        <li>The corresponding benifits you will be provided in the next flight.</li>
+
+                                        <li>Once you get the seat from someone then you cant cancel that seat in any circumstances and you have to pay something extra that will be decided by the airline.</li>
+                                        <li>If no one is willing to give their seat then according to the airline rules you can't board for which the benifits will be provided by the airlines.</li>
+
+                                        <li>This is a mechine generated contract which has the airline authorzation for changing the tickets.</li>
+                                        <li>This contract don't need any physical signature and once you accepted the contrcat means you are signed the contract. </li>
+                                    </ul>
+                                    </div>
+                                <div class="uk-modal-footer uk-text-right">
+                                    <button class="uk-button uk-button-primary uk-align-center" type="button">Accept</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="modal-volunteer" class="uk-flex-top" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+                                <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                                <div class="uk-modal-header uk-margin-remove">
+                                    <h2 class="uk-modal-title uk-text-lead uk-align-center" style="font-size:1.1rem">Terms And Conditions</h2>
+                                </div>
+                                   <div class="uk-modal-body uk-margin-remove uk-padding-remove">
+                                     <ul class="uk-list uk-list-bullet uk-margin-remove uk-padding-remove uk-text-small">
+                                        <li>Once you agreed to this smart contract and Accept the seat request then you have to give your seat and the corresponding benifits against you will be getting through our app.</li>
+                                        <li>If no one send a seat request then you have to take that flight.</li>
+                                        <li>The corresponding benifits you will be provided in the next flight.</li>
+
+                                        <li>Once you get the seat from someone then you cant cancel that seat in any circumstances and you have to pay something extra that will be decided by the airline.</li>
+                                        <li>If no one is willing to give their seat then according to the airline rules you can't board for which the benifits will be provided by the airlines.</li>
+
+                                        <li>This is a mechine generated contract which has the airline authorzation for changing the tickets.</li>
+                                        <li>This contract don't need any physical signature and once you accepted the contrcat means you are signed the contract. </li>
+                                    </ul>
+                                </div>
+                                <div class="uk-modal-footer uk-text-right">
+                                    <button class="uk-button uk-button-primary uk-align-center" type="button">Accept</button>
+                                </div>
+
+                            </div>
+                        </div>
                 </div>
             </div>
             {% empty %}
