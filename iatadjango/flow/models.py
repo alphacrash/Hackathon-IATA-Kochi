@@ -10,8 +10,8 @@ class Ticket(models.Model):
     flight = models.CharField(max_length=120)
     source = models.CharField(max_length=120)
     destination = models.CharField(max_length=120)
-    date = models.DateField()
-    pnr = models.CharField(max_length=10)
+    date = models.CharField(max_length=12)
+    pnr = models.CharField(max_length=10, unique=True)
     bumped = models.BooleanField(default=False)
 
     def __str__(self):

@@ -94,13 +94,13 @@
     <div class="uk-container uk-margin">
 
         <div class="uk-card uk-card-default uk-margin">
-            <form>
+            <form method="POST" action="">{% csrf_token %}
                 <fieldset class="uk-fieldset">
 
                     <legend class="uk-legend uk-text-center">Add Ticket</legend>
 
                     <div class="uk-margin uk-margin-remove-bottom">
-                        <input class="uk-input uk-form-width-medium uk-align-center" type="text" placeholder="Enter PNR Number">
+                        <input name= 'pnr' class="uk-input uk-form-width-medium uk-align-center" type="text" placeholder="Enter PNR Number">
                     </div>
 
                     <button class="uk-button uk-button-default uk-margin uk-margin-remove-top uk-align-center" type="submit">Add Ticket</button>
