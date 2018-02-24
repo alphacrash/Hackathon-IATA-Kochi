@@ -12,6 +12,7 @@ class Ticket(models.Model):
     destination = models.CharField(max_length=120)
     date = models.DateField()
     pnr = models.CharField(max_length=10)
+    bumped = models.BooleanField(default=False)
 
     def __str__(self):
         return self.flight
