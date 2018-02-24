@@ -1,11 +1,3 @@
-<!--
-<h2>Login</h2>
-<form method="post">{% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
-
--->
 {% load static %}
 
 <!DOCTYPE html>
@@ -28,19 +20,19 @@
             <ul class="uk-navbar-nav">
                 {% if user.is_authenticated %}
                 <li>
-                    <a href="/profile/">Profile</a>
+                    <a href="/profile/">
+                        <span uk-icon="user"></span>&nbsp;
+                        Hi, {{ user.username }}
+                    </a>
                 </li>
-                {% endif %}
+                {% else %}
                 <li class="uk-parent">
                     <a href="#modal-center" uk-toggle>
                         <span uk-icon="user"></span>&nbsp; 
-                        {% if user.is_authenticated %}
-                        Hi, {{ user.name }}
-                        {% else %}
                         Login
-                        {% endif %} 
                     </a>
                 </li>
+                {% endif %} 
                 <div id="modal-center" class="uk-flex-top" uk-modal>
                     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="width:90%;height:67%;">
                         <h3 class="uk-modal-title" id="mod">Login</h2>
