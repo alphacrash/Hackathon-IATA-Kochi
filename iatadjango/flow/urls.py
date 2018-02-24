@@ -3,5 +3,5 @@ from flow import views
 
 urlpatterns = [
     path('', views.index),
-    path('profile/', views.profile),
+    path('profile/', views.Profile.as_view()),
 ]

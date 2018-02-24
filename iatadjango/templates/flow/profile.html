@@ -112,19 +112,21 @@
 
         <h3 align=center>Your Tickets</h3>
 
+        {% for ticket in object_list %}
         <div class="uk-card uk-card-default uk-margin">
             <div class="uk-card-header uk-margin-remove-bottom">
-                <h4 class="uk-align-left">Sun Express</h4>
-                <h5 class="uk-align-right">PNR No.</h5>
+                <h4 class="uk-align-left">{{ ticket.flight }}</h4>
+                <h5 class="uk-align-right">PNR: {{ ticket.pnr }}</h5>
             </div>
             <div class=" uk-card-body uk-align-center uk-margin-remove-top">
 
-                <h3 align=center class="uk-margin-remove-top">FRA
-                    <span uk-icon="chevron-right"></span> MUC</h3>
+                <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
+                    <span uk-icon="chevron-right"></span> {{ ticket.destination }}</h3>
                 <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom">Volunteer</button>
                 <button class="uk-button uk-button-default uk-align-center uk-margin-small-top">Bumped</button>
             </div>
         </div>
+        {% endfor %}
 
     </div>
 
