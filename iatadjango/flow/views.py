@@ -18,13 +18,15 @@ def home(request):
     return render(request, "registration/login.html", {})
 
 
-def acceptor(request):
-    ticket = get_object_or_404(Ticket, pk=3)
-    context = {
-        'ticket': ticket,
-        'notification': notification,
-    }
-    return render(request, "flow/acceptor.html", context)
+def accepted(request, pk=None):
+    global notification
+    notification = notification - 1
+    t = get_object_or_404(Ticket, pk=pk)
+    t.volunteer = True
+    t.save()
+    print(t)
+    print("Volunteer Change")
+    return HttpResponseRedirect('/acceptor/{}'.format(pk))
 
 
 class AcceptorView(DetailView):
@@ -41,7 +43,7 @@ class Profile(LoginRequiredMixin, ListView):
         return context
 
     def get_queryset(self):
-        return Ticket.objects.filter(user=self.request.user)
+        return get_list_or_404(Ticket, user=self.request.user)
 
     def post(self, request, *args, **kwargs):
         pnr = request.POST.get('pnr')
@@ -51,7 +53,10 @@ class Profile(LoginRequiredMixin, ListView):
         return HttpResponseRedirect('/profile/')
 
 
-def bumped(request):
+def bumped(request, pk=None):
     global notification
     notification = notification + 1
+    t = get_object_or_404(Ticket, pk=pk)
+    t.bumped = True
+    t.save()
     return HttpResponseRedirect('/profile/')
