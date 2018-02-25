@@ -20,7 +20,8 @@ def home(request):
 
 def accepted(request, pk=None):
     global notification
-    notification = notification - 1
+    if notification > 0:
+        notification = notification - 1
     t = get_object_or_404(Ticket, pk=pk)
     t.volunteer = True
     t.save()
@@ -39,11 +40,14 @@ class Profile(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        global notification
+        if notification > 0:
+            context['show_notification'] = True
         context['notification'] = notification
         return context
 
     def get_queryset(self):
-        return get_list_or_404(Ticket, user=self.request.user)
+        return Ticket.objects.filter(user=self.request.user)
 
     def post(self, request, *args, **kwargs):
         pnr = request.POST.get('pnr')
@@ -55,8 +59,7 @@ class Profile(LoginRequiredMixin, ListView):
 
 def bumped(request, pk=None):
     global notification
-    if notification > 0:
-        notification = notification + 1
+    notification = notification + 1
     t = get_object_or_404(Ticket, pk=pk)
     t.bumped = True
     t.save()
