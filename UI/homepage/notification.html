@@ -9,17 +9,100 @@
         <script src="js/uikit-icons.min.js"></script>
     </head>
 
-    <body>
-        <nav class="uk-navbar-container" uk-navbar>
-                <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">App Name</a>
-            <nav class="uk-navbar uk-navbar-container uk-margin"></nav>
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+   <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-offcanvas-content">
+
+            <button class="uk-button uk-button-default uk-margin-top" type="button" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></button>
+
+            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img class="uk-border-circle" width="40" height="40" src="img/avatar.jpg">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">John Doe</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card-body">
+                            <ul class="uk-list uk-list-divider">
+                                <li><span uk-icon="user"></span> <strong>johndoe</strong></li>
+                                <li><span uk-icon="receiver"></span> <strong>987 6543 210</strong></li>
+                                <li><span uk-icon="mail"></span> <strong style="font-size:12px;">johndoe@example.com</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="uk-card uk-card-default uk-margin-small-top">
+                        <div class="uk-card-body">
+                            <ul class="uk-list uk-list-divider">
+                                <li><a href=""><strong>Ticket History</strong></a> </li>
+                                <li><a href=""><strong>Account Settings</strong></a> </li>
+                                <li><a href=""><strong>Contact Us</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </nav>
+        </div>
+        <a class="uk-navbar-item uk-logo uk-navbar-center" href="#">Logo</a>
+        <div class="uk-navbar-right">
+            
+        </div>
+    </nav> <body>
+       
+            
+
+            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar" style="background-color:#f8f8f8">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img class="uk-border-circle" width="40" height="40" src="img/avatar.jpg">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h3 class="uk-card-title uk-margin-remove-bottom">John Doe</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-card-body">
+                            <ul class="uk-list uk-list-divider">
+                                <li><span uk-icon="user"></span> <strong>johndoe</strong></li>
+                                <li><span uk-icon="receiver"></span> <strong>987 6543 210</strong></li>
+                                <li><span uk-icon="mail"></span> <strong style="font-size:12px;">johndoe@example.com</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="uk-card uk-card-default uk-margin-small-top">
+                        <div class="uk-card-body">
+                            <ul class="uk-list uk-list-divider">
+                                <li><a href=""><strong>Ticket History</strong></a> </li>
+                                <li><a href=""><strong>Account Settings</strong></a> </li>
+                                <li><a href=""><strong>Contact Us</strong></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        
 
         <div class="uk-container">
-        <legend class="uk-legend uk-text-center">Add Ticket</legend>
+        <legend class="uk-legend uk-text-center">Seat Requests</legend>
 
             <div class="uk-card uk-card-default uk-card-body">
                 <h4 align="center">Sun Express</h4>
@@ -32,6 +115,8 @@
              </div> 
 
         </div>
+        <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
 
         
 
