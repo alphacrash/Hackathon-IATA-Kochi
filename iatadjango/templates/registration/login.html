@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 
@@ -15,163 +14,98 @@
 </head>
 
 <body>
-    <nav class="uk-navbar-container" id="nav" uk-navbar uk-grid uk-navbar-transparent style="background-color:rgb(168, 164, 164)">
-        <div class="uk-navbar-left width-1-2"><a class="uk-logo" href="/profile/"><img class="uk-margin-small-left" src="{% static "img/logo.png" %}" alt="logo" width="45px" style="position:inherit"></a></div>
+    <nav class="uk-navbar-container" id="nav" uk-navbar uk-grid uk-navbar-transparent style="">
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li><a class="uk-logo uk-padding-remove-right" href="/profile/">
+                    <img src="{% static "img/logo.png" %}" alt="logo" width="45px" style="position:inherit">
+                    </a>
+                </li>
+                <li><a style="font-size: large; color: black">Air Bits</a></li>
+            </ul>
+        </div>
         <div class="uk-navbar-right width-1-2">
             <ul class="uk-navbar-nav">
                 {% if user.is_authenticated %}
                 <li>
                     <a href="/profile/">
-                        <span uk-icon="user"></span>&nbsp;
-                        Hi, {{ user.username }}
+                    <span uk-icon="user"></span>&nbsp;
+                    Hi, {{ user.username }}
                     </a>
                 </li>
                 {% else %}
                 <li class="uk-parent">
                     <a href="#modal-center" uk-toggle>
-                        <span uk-icon="user"></span>&nbsp;
-                        Login
+                    <span uk-icon="user"></span>&nbsp;
+                    Login
                     </a>
                 </li>
                 {% endif %}
                 <div id="modal-center" class="uk-flex-top" uk-modal>
                     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="width:90%;height:67%;">
-                        <h3 class="uk-modal-title" id="mod">Login</h2>
-
-                            <button class="uk-modal-close-default" type="button" uk-close></button>
-                            <form method="post" class="uk-form-horizontal uk-margin-large">{% csrf_token %}
-
-                                <div class="uk-margin">
-                                    <label class="uk-form-label" id="mod" for="form-horizontal-text">Email:</label>
-                                    <div class="uk-form-controls">
-                                        <input name="username" class="uk-input" id="form-horizontal-text" style="background-color:#3C2759;" type="text" placeholder="Enter Email">
-                                    </div>
+                        <h3 class="uk-modal-title" id="mod">Login</h3>
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <form method="post" class="uk-form-horizontal uk-margin-large">
+                            {% csrf_token %}
+                            <div class="uk-margin">
+                                <label class="uk-form-label" id="mod" for="form-horizontal-text">Email:</label>
+                                <div class="uk-form-controls">
+                                    <input name="username" class="uk-input" id="form-horizontal-text" style="background-color:#3C2759;" type="text" placeholder="Enter Email">
                                 </div>
-
-                                <div class="uk-margin">
-                                    <label class="uk-form-label" id="mod" for="form-horizontal-text">Password:</label>
-                                    <div class="uk-form-controls">
-                                        <input name="password" class="uk-input" id="form-horizontal-text" type="password" style="background-color:#3C2759;" placeholder="Enter Password">
-                                    </div>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" id="mod" for="form-horizontal-text">Password:</label>
+                                <div class="uk-form-controls">
+                                    <input name="password" class="uk-input" id="form-horizontal-text" type="password" style="background-color:#3C2759;" placeholder="Enter Password">
                                 </div>
-                                <center>
-                                    <button type="submit" class="uk-button uk-button-default search-button" style="background-color:#3C2759;">
-                                        <a style="color:whitesmoke;">Login</a>
-                                    </button>
-                                    <a href="/accounts/signup/">Register Here</a>
-                                </center>
-                            </form>
+                            </div>
+                            <center>
+                                <button type="submit" class="uk-button uk-button-default search-button" style="background-color:#3C2759;">
+                                <a style="color:whitesmoke;">Login</a>
+                                </button>
+                                <a href="/accounts/signup/">Register Here</a>
+                            </center>
+                        </form>
                     </div>
                 </div>
             </ul>
         </div>
     </nav>
-    <div uk-slideshow class="uk-position-relative uk-visible-toggle uk-light">
-
-        <ul class="uk-slideshow-items img2" style="width:100%;">
-            <li>
-                <img src="{% static "img/plane.png" %}" alt="" uk-cover>
-            </li>
-        </ul>
-        <!--<div class="card">
-            <form class="uk-grid-small" uk-grid>
-                <div class="uk-width-1-1@s">
-                    <div class="uk-card uk-card-default uk-card-small" id="search_flight">
-                        <div class="uk-text-center uk-card-body">
-                            <h4 style="color:whitesmoke;">Search Flight</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-width-1-4@s">
-                    <Label id="to_from">From :</Label>
-                </div>
-                <div class="uk-width-1-4@s">
-                    <div class="uk-margin" style="color:whitesmoke">
-            <select class="uk-select" style="background-color:#3C2759">
-                <option >London City(LCY)</option>
-                <option>Dubai (DXB)</option>
-            </select>
-        </div>
-                </div>
-                <div class="uk-width-1-4@s">
-                    <Label id="to_from" style="">To :</Label>
-                </div>
-                <div class="uk-width-1-4@s">
-                    <div class="uk-margin" style="color:whitesmoke">
-            <select class="uk-select" style="background-color:#3C2759">
-                <option>London(LCY)</option>
-                <option>Dubai(DXB)</option>
-            </select>
-        </div>
-                </div>
-                <div class="uk-width-1-4@s">
-
-                    <Label id="label">Adult (Above 6) : &nbsp;</Label>
-
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                    <input type="number" id="number" value="0" />
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </div>
-                <div class="uk-width-1-4@s">
-                    <Label id="label">Infant (0-6 years) :</Label>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                    <input type="number" id="number" value="0" />
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                </div>
-                <div class="uk-width-1-4@s" >
-                    <Label id="label">Depart:</Label>
-                </div>
-                <div class="uk-width-1-4@s" style="color:whitesmoke;">
-                    <input class="uk-input" type="date" style="background-color:#3C2759">
-                </div>
-                <div class="uk-width-1-4@s">
-                    <Label id="label">Return:</Label>
-                </div>
-                <div class="uk-width-1-4@s" style="color:whitesmoke;">
-                    <input class="uk-input" type="date" style="background-color:#3C2759">
-                </div>
-                <div class="uk-width-1-1@s">
-                    <center><button class="uk-button uk-button-default search-button" style="background-color:#3C2759"><a href="profile.html">Search Flight</a></button></center>
-                </div>
-            </form>
-        </div>
-    </div> -->
-
-        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="card2">
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <h3 class="uk-card-title">BlockChain Compliant</h3>
-                    <p>Fear of safety of your personal info? Well, We got the best solution for that . With our advanced BlockChain
-                        technology we assure the security of every bit of your personal credential. We got the powerful framework
-                        in which you can share your details without any hesitation. </p>
-                    <br>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <h3 class="uk-card-title">Get The Best Seat</h3>
-                    <p>We care about you. So we have the best seat for you. We ensure that you get the best seat. With our seat
-                        swapping you can swap seats with others.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body">
-                    <h3 class="uk-card-title">Get Cheapest Fare</h3>
-                    <p>Dont worry abiut the fares anymore . We are here to provide the best fare that is possible. We make your
-                        joerney full of entertainment and fun.</p>
-                </div>
+    <div class="uk-height-medium uk-background-cover uk-light uk-flex" style="background-image: url('{% static "img/plane.png" %}');"></div>
+    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid id="card2">
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">BlockChain Compliant</h3>
+                <p>Fear of safety of your personal info? Well, We got the best solution for that . With our advanced BlockChain
+                    technology we assure the security of every bit of your personal credential. We got the powerful framework
+                    in which you can share your details without any hesitation.
+                </p>
+                <br>
             </div>
         </div>
-        <div class="uk-card uk-card-footer uk-card-body uk-width-1-1@m">
-            <h3 class="uk-card-title" style="color:black;">Contact Us</h3>
-            <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" style="color:black;"></a>
-            <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" style="color:black;"></a>
-            <a href="" class="uk-icon-button" uk-icon="google-plus" style="color:black;"></a>
-
-
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">Get The Best Seat</h3>
+                <p>We care about you. So we have the best seat for you. We ensure that you get the best seat. With our seat
+                    swapping you can swap seats with others.
+                </p>
+            </div>
         </div>
-
-
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">Get Cheapest Fare</h3>
+                <p>Dont worry abiut the fares anymore . We are here to provide the best fare that is possible. We make your
+                    joerney full of entertainment and fun.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card uk-card-footer uk-card-body uk-width-1-1@m">
+        <h3 class="uk-card-title" style="color:black;">Contact Us</h3>
+        <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter" style="color:black;"></a>
+        <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook" style="color:black;"></a>
+        <a href="" class="uk-icon-button" uk-icon="google-plus" style="color:black;"></a>
+    </div>
 </body>
 
 </html>
