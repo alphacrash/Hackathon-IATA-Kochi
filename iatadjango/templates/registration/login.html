@@ -15,8 +15,9 @@
 </head>
 
 <body>
-    <nav class="uk-navbar-container uk-navbar-transparent" id="nav" uk-navbar>
-        <div class="uk-navbar-right">
+    <nav class="uk-navbar-container" id="nav" uk-navbar uk-grid uk-navbar-transparent style="background-color:rgb(168, 164, 164)">
+        <div class="uk-navbar-left width-1-2"><a class="uk-logo" href="/profile/"><img class="uk-margin-small-left" src="{% static "img/logo.png" %}" alt="logo" width="45px" style="position:inherit"></a></div>
+        <div class="uk-navbar-right width-1-2">
             <ul class="uk-navbar-nav">
                 {% if user.is_authenticated %}
                 <li>
@@ -28,11 +29,11 @@
                 {% else %}
                 <li class="uk-parent">
                     <a href="#modal-center" uk-toggle>
-                        <span uk-icon="user"></span>&nbsp; 
+                        <span uk-icon="user"></span>&nbsp;
                         Login
                     </a>
                 </li>
-                {% endif %} 
+                {% endif %}
                 <div id="modal-center" class="uk-flex-top" uk-modal>
                     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="width:90%;height:67%;">
                         <h3 class="uk-modal-title" id="mod">Login</h2>
@@ -67,7 +68,7 @@
     </nav>
     <div uk-slideshow class="uk-position-relative uk-visible-toggle uk-light">
 
-        <ul class="uk-slideshow-items" style="width:100%;">
+        <ul class="uk-slideshow-items img2" style="width:100%;">
             <li>
                 <img src="{% static "img/plane.png" %}" alt="" uk-cover>
             </li>

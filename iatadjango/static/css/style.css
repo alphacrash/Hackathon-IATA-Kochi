@@ -5,6 +5,7 @@ nav{
 	background-color: #3C2759;
 	color:#B4AAC1;
     height:60px;
+
 	}
 #nav_button{
 	color:#B4AAC1;
@@ -44,7 +45,7 @@ height:90vh;
     margin-left:8px;
 }
 #mod{
-   color:#3C2759; 
+   color:#3C2759;
 }
 Label{
     color:whitesmoke;
@@ -59,7 +60,7 @@ left:0;
 z-index:99;
 background: linear-gradient(transparent 80%, white);
 }
-img{
+.img2{
 	width: 100%;
 	position: relative;
 }
@@ -97,7 +98,7 @@ form #decrease {
 #label{
     margin-left:6px;
     color:whitesmoke;
-    
+
 }
 form #increase {
   margin-left: -2px;
@@ -133,7 +134,7 @@ button{
     margin-left:550px;
 }
 
-@media (max-width: 720px) { 
+@media (max-width: 720px) {
 
 #card2{
 top:0px;
@@ -150,7 +151,7 @@ background: linear-gradient(#3C2759,#6f48a5 95%);
 
  }
 
- @media (max-width: 500px) { 
+ @media (max-width: 500px) {
 
 img{
 	left:180px !important;
@@ -159,7 +160,7 @@ img{
 
  }
 
-  @media (max-width: 400px) { 
+  @media (max-width: 400px) {
 
 img{
 	left:150px !important;
