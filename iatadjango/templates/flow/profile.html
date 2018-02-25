@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <div class="uk-offcanvas-content">
+    <div class="uk-offcanvas-content"></div>
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/">Profile</a>
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/"><img src="{% static "img/logo.png" %}" alt="logo" height="50" width="50"></a>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li><a href="#"><span uk-icon="bell"></span><span class="uk-badge">{{ notification }}</span></a></li>
