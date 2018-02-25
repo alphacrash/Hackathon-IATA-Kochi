@@ -22,5 +22,6 @@ function decreaseValue() {
 }
 
 function hide_loader() {
-    $('#loader').delay(1000).hide(0);
+    $('#loader').delay(1000).fadeOut(500);
+    $('#success').delay(1000).fadeIn(500);
 }

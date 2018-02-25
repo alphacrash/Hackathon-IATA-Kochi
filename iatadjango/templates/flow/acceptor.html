@@ -18,11 +18,11 @@
         </div>
         <i class="fa fa-wifi fa-2x uk-margin-right" aria-hidden="true"></i>
         <i class="fa fa-cutlery fa-2x uk-margin-right" aria-hidden="true"></i>
-        <button class="uk-button uk-button-primary uk-margin-remove-top uk-align-right" uk-toggle="target: #success-toggle">Accept</button>
+        <button class="uk-button uk-button-primary uk-margin-remove-top uk-align-right" uk-toggle="target: #success-modal" onclick="hide_loader()">Accept</button>
         <div id="success-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
-                <div class="loader" id="loader"></div>
-                <p>Success</p>
+                <div class="loader uk-align-center" id="loader"></div>
+                <h2 align=center id="success" style="display:none">Success</h2>
             </div>
         </div>
     </div>

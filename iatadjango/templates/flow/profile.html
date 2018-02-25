@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <div class="uk-offcanvas-content">
+    <div class="uk-offcanvas-content"></div>
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li><a href="#" uk-toggle="target: #offcanvas-overlay"><span uk-icon="menu"></span></a></li>
                 </ul>
             </div>
-            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/">Profile</a>
+            <a class="uk-navbar-item uk-logo uk-navbar-center" href="/profile/"><img src="{% static "img/logo.png" %}" alt="logo" height="50" width="50"></a>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
                     <li><a href="#"><span uk-icon="bell"></span><span class="uk-badge">{{ notification }}</span></a></li>
@@ -52,8 +52,8 @@
             {% for ticket in object_list reversed %}
             <div class="uk-card uk-card-default uk-margin">
                 <div class="uk-card-header uk-margin-remove-bottom">
-                    <h4 class="uk-align-left">{{ ticket.flight }}</h4>
-                    <h5 class="uk-align-right">{{ ticket.pnr }}</h5>
+                    <h5 class="uk-align-left uk-margin-remove">{{ ticket.flight }}</h5>
+                    <h5 class="uk-align-right uk-margin-remove">{{ ticket.pnr }}</h5>
                 </div>
                 <div class=" uk-card-body uk-align-center uk-margin-remove-top">
                     <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
@@ -159,7 +159,7 @@
                         <ul class="uk-list uk-list-divider">
                             <li>
                                 <span uk-icon="mail"></span>
-                                <strong style="font-size:10px;">{{ user.username }}</strong>
+                                <strong style="font-size:20px;">{{ user.username }}</strong>
                             </li>
                             <li>
                                 <span uk-icon="receiver"></span>
@@ -194,6 +194,8 @@
     </div>
     <script src="{% static "js/uikit.min.js" %}"></script>
     <script src="{% static "js/uikit-icons.min.js" %}"></script>
+    <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+    <script src="{% static "js/script.js" %}"></script>
 </body>
 
 </html>

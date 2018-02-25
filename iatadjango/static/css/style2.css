@@ -1,6 +1,9 @@
 .uk-list a {
     color: #666;
 }
+button{
+    border: none;
+}
 
 .uk-list a:hover {
     color: black;
