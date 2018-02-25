@@ -12,7 +12,7 @@ class Ticket(models.Model):
     source = models.CharField(max_length=120)
     destination = models.CharField(max_length=120)
     date = models.CharField(max_length=12)
-    pnr = models.CharField(max_length=30, unique=True)
+    pnr = models.CharField(max_length=30, unique=False)
     bumped = models.BooleanField(default=False)
     volunteer = models.BooleanField(default=False)
 

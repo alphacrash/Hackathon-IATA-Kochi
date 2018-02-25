@@ -59,15 +59,11 @@
                     <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
                         <span uk-icon="chevron-right"></span>{{ ticket.destination }}</h3>
 
-                        {% if ticket.volunteer or ticket.bumped %}
-                        <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom">Request processed</button>
-                        {% else %}
                         {% if not ticket.volunteer %}
                         <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom" href="#modal-volunteer" uk-toggle>Volunteer</button>
                         {% endif %}
                         {% if not ticket.bumped %}
                         <button class="uk-button uk-button-default uk-align-center uk-margin-remove-bottom" href="#modal-bumped" uk-toggle>Bumped</button>
-                        {% endif %}
                         {% endif %}
 
                         <div id="modal-bumped" class="uk-flex-top" uk-modal>

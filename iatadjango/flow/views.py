@@ -55,7 +55,8 @@ class Profile(LoginRequiredMixin, ListView):
 
 def bumped(request, pk=None):
     global notification
-    notification = notification + 1
+    if notification > 0:
+        notification = notification + 1
     t = get_object_or_404(Ticket, pk=pk)
     t.bumped = True
     t.save()
