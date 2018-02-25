@@ -52,8 +52,8 @@
             {% for ticket in object_list reversed %}
             <div class="uk-card uk-card-default uk-margin">
                 <div class="uk-card-header uk-margin-remove-bottom">
-                    <h4 class="uk-align-left">{{ ticket.flight }}</h4>
-                    <h5 class="uk-align-right">{{ ticket.pnr }}</h5>
+                    <h5 class="uk-align-left uk-margin-remove">{{ ticket.flight }}</h5>
+                    <h5 class="uk-align-right uk-margin-remove">{{ ticket.pnr }}</h5>
                 </div>
                 <div class=" uk-card-body uk-align-center uk-margin-remove-top">
                     <h3 align=center class="uk-margin-remove-top">{{ ticket.source }}
@@ -145,7 +145,7 @@
                         <ul class="uk-list uk-list-divider">
                             <li>
                                 <span uk-icon="mail"></span>
-                                <strong style="font-size:10px;">{{ user.username }}</strong>
+                                <strong style="font-size:20px;">{{ user.username }}</strong>
                             </li>
                             <li>
                                 <span uk-icon="receiver"></span>
